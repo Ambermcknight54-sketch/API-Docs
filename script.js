@@ -19,7 +19,7 @@ async function getName(customName) {
   const data= {name: "customName"}; 
   const datastring= name URLSearchParams(data);
   const response= await fetch(" https://api.generize.io"); 
-  const result= await response.json(;)
+  const result= await response.json()
 }
    getName("Pita"); 
 
