@@ -2,7 +2,7 @@ console.log("Hi World!");
 
 async function getName() {
   debugger;
-  console.log (aaaaaaaaa);
+  console.log ("aaaaaaaaa");
   const data= {name: "Pita"}; 
   const datastring= name URLSearchParams(data);
   const response= await fetch(" https://api.generize.io"); 
@@ -15,7 +15,7 @@ console.log("Hi World!");
 
 async function getName(customName) {
   debugger;
-  console.log (aaaaaaaaa);
+  console.log ("aaaaaaaaa");
   const data= {name: "customName"}; 
   const datastring= name URLSearchParams(data);
   const response= await fetch(" https://api.generize.io"+ "?"+ "datastring"); 
@@ -32,7 +32,7 @@ getName("Peter");
 
 async function getName(customName) {
   debugger;
-  console.log (aaaaaaaaa);
+  console.log ("aaaaaaaaa");
   const data= {name: "customName"}; 
   const dataString= name URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
