@@ -12,6 +12,7 @@ async function getName() {
 
 
 console.log("Hi World!");
+getName("Peter");
 
 async function getName(customName) {
   debugger;
@@ -22,8 +23,6 @@ async function getName(customName) {
   const result= await response.json()
   debugger;
 }
-getName("Pita");
-
 
 
 
@@ -31,13 +30,74 @@ console.log("Hi World!");
 getName("Peter"); 
 
 async function getName(customName) {
-  debugger;
-  console.log ("aaaaaaaaa");
   const data= {name: "customName"}; 
   const dataString= name URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
-  debugger;
-  document.querySelector("output");
+  const outputTag=document.querySelector("output");
+  outputTag.innerText= "Peter is 100% male."; 
 }
+console.log("Hi World!");
+getName("Pita"); 
+
+async function getName(customName) {
+  const data= {name: "customName"}; 
+  const dataString= name URLSearchParams(data);
+  const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
+  const result= await response.json();
+  const outputTag=document.querySelector("output");
+  outputTag.innerText= Peter + "is 100% male."; 
+}
+
+
+console.log("Hi World!");
+getName("Pita"); 
+
+async function getName(customName) {
+  const data= {name: "customName"}; 
+  const dataString= name URLSearchParams(data);
+  const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
+  const result= await response.json();
+  const outputTag=document.querySelector("output");
+  outputTag.innerText= Peter + "is 100% male."; 
+}
+
+console.log("Hi World!");
+getName("Pita"); 
+
+async function getName(customName) {
+  const data= {name: "customName"}; 
+  const dataString= name URLSearchParams(data);
+  const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
+  const result= await response.json();
+  const outputTag=document.querySelector("output");
+  outputTag.innerText= customName + "is 100% male."; 
+}
+
+console.log("Hi World!");
+getName("Peter"); 
+
+async function getName(customName) {
+  debugger;
+  console.log ("aaaaaaaaaaaaaa")
+  const data= {name: "customName"}; 
+  const dataString= name URLSearchParams(data);
+  const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
+  const result= await response.json();
+  const outputTag=document.querySelector("output");
+  outputTag.innerText= customName + "is 100% male."; 
+  outputTag.innerText= "Peter is 100% male.";
+
+console.log("Hi World!");
+getName("Pita");
+ 
+async function getName(customName) {
+  const data= {name: "customName"}; 
+  const dataString= name URLSearchParams(data);
+  const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
+  const result= await response.json();
+  const outputTag=document.querySelector("output");
+  outputTag.innerText= customName + "is 100% male."; 
+
+}}
 
