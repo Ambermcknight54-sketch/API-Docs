@@ -7,7 +7,6 @@ async function getName(customName) {
     const dataString = new URLSearchParams(data).toString();
     const response = await fetch("https://api.generize.io?" + dataString);
     const result = await response.json();
-
     const percent = result.probability * 100;
     const gender = result.gender;
     const outputTag = document.querySelector("output");
