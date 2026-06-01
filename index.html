@@ -8,7 +8,64 @@
     <title>API Docs</title>
   </head>
   <body>
-    <h1>API Docs</h1>
-    <output> Insert Output Here</output>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>REST API Secure Login</title>
+      </head>
+      <body>
+        <header>
+          <h1>Account Authentication</h1>
+        </header>
+
+        <main>
+          <form id="apiForm">
+            <fieldset>
+              <legend>Login Credentials</legend>
+
+              <section>
+                <label for="usernameInput">Email Address:</label>
+                <input
+                  type="email"
+                  id="usernameInput"
+                  name="usernameInput"
+                  placeholder="eve.holt@reqres.in"
+                  required />
+              </section>
+
+              <br />
+
+              <section>
+                <label for="passwordInput">Password:</label>
+                <input
+                  type="password"
+                  id="passwordInput"
+                  name="passwordInput"
+                  placeholder="Enter password"
+                  required />
+              </section>
+
+              <br />
+
+              <button type="submit">Log In</button>
+            </fieldset>
+          </form>
+
+          <hr />
+
+          <section id="outputDisplay">
+            <output id="statusMessage"
+              >Please enter your credentials above to authenticate.</output
+            >
+          </section>
+        </main>
+
+        <footer></footer>
+      </body>
+    </html>
+
+    <output></output>
   </body>
 </html>

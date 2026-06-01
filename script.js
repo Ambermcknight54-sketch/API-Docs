@@ -4,7 +4,7 @@ async function getName() {
   debugger;
   console.log ("aaaaaaaaa");
   const data= {name: "Pita"}; 
-  const datastring= name URLSearchParams(data);
+  const datastring= name const dataString = new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io"); 
   const result= await response.json();
 }
@@ -18,7 +18,7 @@ async function getName(customName) {
   debugger;
   console.log ("aaaaaaaaa");
   const data= {name: "customName"}; 
-  const datastring= name URLSearchParams(data);
+  const datastring= new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io"+ "?"+ "datastring"); 
   const result= await response.json()
   debugger;
@@ -31,7 +31,7 @@ getName("Peter");
 
 async function getName(customName) {
   const data= {name: "customName"}; 
-  const dataString= name URLSearchParams(data);
+  const dataString= new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
   const outputTag=document.querySelector("output");
@@ -42,7 +42,7 @@ getName("Pita");
 
 async function getName(customName) {
   const data= {name: "customName"}; 
-  const dataString= name URLSearchParams(data);
+  const dataString= new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
   const outputTag=document.querySelector("output");
@@ -55,7 +55,7 @@ getName("Pita");
 
 async function getName(customName) {
   const data= {name: "customName"}; 
-  const dataString= name URLSearchParams(data);
+  const dataString= new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
   const outputTag=document.querySelector("output");
@@ -67,7 +67,7 @@ getName("Pita");
 
 async function getName(customName) {
   const data= {name: "customName"}; 
-  const dataString= name URLSearchParams(data);
+  const dataString= new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
   const outputTag=document.querySelector("output");
@@ -81,7 +81,7 @@ async function getName(customName) {
   debugger;
   console.log ("aaaaaaaaaaaaaa")
   const data= {name: "customName"}; 
-  const dataString= name URLSearchParams(data);
+  const dataString= new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
   const outputTag=document.querySelector("output");
@@ -93,7 +93,7 @@ getName("Pita");
 
 async function getName(customName) {
   const data= {name: "customName"}; 
-  const dataString= name URLSearchParams(data);
+  const dataString= new URLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
   const outputTag=document.querySelector("output");
@@ -106,7 +106,7 @@ getName("Kim");
  
 async function getName(customName) {
   const data= {name: "customName"}; 
-  const dataString= name URLSearchParams(data);
+  const dataString= newURLSearchParams(data);
   const response= await fetch(" https://api.generize.io" + "?"+ "datastring"); 
   const result= await response.json();
   const percent=probability * 100;
