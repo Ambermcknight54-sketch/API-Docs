@@ -10,7 +10,6 @@ async function getName(customName) {
 
     const percent = result.probability * 100;
     const gender = result.gender;
-
     const outputTag = document.querySelector("output");
     if (outputTag) {
       outputTag.innerText = customName + " is " + percent + "% " + gender + ".";
