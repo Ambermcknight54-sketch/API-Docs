@@ -3,69 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js" defer></script>
+    <title>REST API Secure Login</title>
     <link rel="stylesheet" href="style.css" />
-    <title>API Docs</title>
+    <script src="script.js" defer></script>
   </head>
   <body>
-    <!doctype html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>REST API Secure Login</title>
-      </head>
-      <body>
-        <header>
-          <h1>Account Authentication</h1>
-        </header>
+    <header>
+      <h1>Account Authentication</h1>
+    </header>
 
-        <main>
-          <form id="apiForm">
-            <fieldset>
-              <legend>Login Credentials</legend>
+    <main>
+      <form id="apiForm">
+        <fieldset>
+          <legend>Login Credentials</legend>
 
-              <section>
-                <label for="usernameInput">Email Address:</label>
-                <input
-                  type="email"
-                  id="usernameInput"
-                  name="usernameInput"
-                  placeholder=""
-                  required />
-              </section>
-
-              <br />
-
-              <section>
-                <label for="passwordInput">Password:</label>
-                <input
-                  type="password"
-                  id="passwordInput"
-                  name="passwordInput"
-                  placeholder=""
-                  required />
-              </section>
-
-              <br />
-
-              <button type="submit">Log In</button>
-            </fieldset>
-          </form>
-
-          <hr />
-
-          <section id="outputDisplay">
-            <output id="statusMessage"
-              >Please enter your credentials above to authenticate.</output
-            >
+          <section>
+            <label for="usernameInput">Email Address:</label>
+            <input
+              type="email"
+              id="usernameInput"
+              name="usernameInput"
+              required />
           </section>
-        </main>
 
-        <footer></footer>
-      </body>
-    </html>
+          <br />
 
-    <output></output>
+          <section>
+            <label for="passwordInput">Password:</label>
+            <input
+              type="password"
+              id="passwordInput"
+              name="passwordInput"
+              required />
+          </section>
+
+          <br />
+
+          <button type="submit">Log In</button>
+        </fieldset>
+      </form>
+
+      <hr />
+
+      <section id="outputDisplay">
+        <output id="statusMessage">
+          Please enter your credentials above to authenticate.
+        </output>
+      </section>
+    </main>
+
+    <footer></footer>
   </body>
 </html>
