@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>REST API Secure Login</title>
+    <!-- Links to external CSS and JavaScript files -->
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -14,38 +15,40 @@
 
     <main>
       <form id="apiForm">
+        <!-- fieldset groups related form inputs together with a border -->
         <fieldset>
-          <legend>Login Credentials</legend>
+          <!-- legend provides a caption/title for the fieldset box -->
+          <legend>Login</legend>
 
           <section>
-            <label for="usernameInput">Email Address:</label>
-            <input
-              type="email"
-              id="usernameInput"
-              name="usernameInput"
-              required />
+            Email:
+            <label for="usernameInput"></label>
+            <input type="email" />
+            <figcaption id="usernameInput"></figcaption>
           </section>
 
           <br />
 
+          <!-- Simplified Password Section -->
+
           <section>
-            <label for="passwordInput">Password:</label>
-            <input
-              type="password"
-              id="passwordInput"
-              name="passwordInput"
-              required />
+            Password:
+            <label for="passwordInput"></label>
+            <input type="password" />
+            <figcaption id="password"></figcaption>
           </section>
 
           <br />
 
-          <button type="submit">Log In</button>
+          <button>Submit</button>
         </fieldset>
       </form>
 
       <hr />
 
+      <!-- Display Area for JavaScript Messages -->
       <section id="outputDisplay">
+        <!-- output is used to show the result of a user action or calculation -->
         <output id="statusMessage">
           Please enter your credentials above to authenticate.
         </output>
