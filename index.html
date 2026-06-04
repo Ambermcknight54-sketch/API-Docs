@@ -8,46 +8,30 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <header>
-      <h1>Account Login</h1>
-    </header>
+    <header>POP UP EMOJI</header>
 
     <main>
       <form id="apiForm">
         <fieldset>
-          <legend>Login</legend>
+          <legend>Emoji Categories:</legend>
 
           <section>
-            Email:
-            <label for="usernameInput"></label>
-            <input type="email" />
-            <figcaption id="usernameInput"></figcaption>
+            <label>
+              Catagory 1: Faces
+              <input name="smileys-and-people" />
+            </label>
           </section>
-
           <br />
-
           <section>
-            Password:
-            <label for="passwordInput"></label>
-            <input type="password" />
-            <figcaption id="password"></figcaption>
+            <label>
+              Catagory 2: Beverages
+              <input name="food-and-drink" />
+            </label>
           </section>
-
-          <br />
-
-          <button>Submit</button>
         </fieldset>
+        <button type="submit">Get Category</button>
       </form>
-
-      <hr />
-
-      <section>
-        <output id="statusMessage">
-          Please enter your credentials above to authenticate.
-        </output>
-      </section>
+      <output id="category" for="queryForm"></output>
     </main>
-
-    <footer></footer>
   </body>
 </html>
