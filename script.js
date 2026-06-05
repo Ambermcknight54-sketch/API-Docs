@@ -53,9 +53,6 @@ async function handleSubmit(event) {
       }
     }
 
-    // =====================================================================
-    // EXPANDED STRING BUILDING (Using fundamental array checks)
-    // =====================================================================
     const totalItems = textItemsList.length;
     let finalOutputText = "";
 
