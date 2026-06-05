@@ -16,7 +16,7 @@ async function handleSubmit(event) {
   // Update the UI directly with a simple loading symbol
   outputTag.innerText = "⏳";
 
-  // Use fetch() to request data from the API endpoint
+  // Use fetch() to request data from the API
   const response = await fetch("https://emojihub.yurace.pro/api/categories");
 
   if (response.ok) {
