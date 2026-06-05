@@ -12,11 +12,7 @@ async function handleSubmit(event) {
 
   const form = event.target;
   const outputTag = document.getElementById("category");
-
-  // Update the UI with a simple loading symbol
-  if (outputTag) {
-    outputTag.innerText = "⏳";
-  }
+  outputTag.innerText = "⏳";
 
   // Use fetch() to request data from the API endpoint
   const response = await fetch("https://emojihub.yurace.pro/api/categories");
@@ -28,8 +24,6 @@ async function handleSubmit(event) {
     // Read exactly what text the user typed into the input boxes right now
     const userSmileyText = form.elements["smileys-and-people"].value;
     const userFoodText = form.elements["food-and-drink"].value;
-
-    // Use map and conditional checks to build our clean collection array
     const textItemsList = categoriesArray.map(function (category) {
       if (category.name === "smileys-and-people") {
         if (userSmileyText === "Smile" || userSmileyText === "smile") {
