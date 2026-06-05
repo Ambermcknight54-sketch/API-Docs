@@ -3,35 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>REST API Secure Login</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" defer />
+    <script src="script.js"></script>
+    <title>EMOJI'S</title>
   </head>
   <body>
-    <header>POP UP EMOJI</header>
-
+    <header>
+      <h1>EMOJI'S: DANGER BEHIND THE FUN</h1>
+    </header>
     <main>
-      <form id="apiForm">
+      <form id="queryForm">
         <fieldset>
-          <legend>Emoji Categories:</legend>
+          <legend>Select Emoji Categories</legend>
 
           <section>
-            <label>
-              Catagory 1: Faces
-              <input name="smileys-and-people" />
-            </label>
+            <label for="facesInput">Category 1: Faces</label>
+            <input
+              type="text"
+              id="facesInput"
+              name="smileys-and-people"
+              placeholder="e.g., happy, wink, grinch"
+              required />
           </section>
+
           <br />
+
           <section>
-            <label>
-              Catagory 2: Beverages
-              <input name="food-and-drink" />
-            </label>
+            <label for="beveragesInput">Category 2: Beverages</label>
+            <input
+              type="text"
+              id="beveragesInput"
+              name="food-and-drink"
+              placeholder="e.g., coffee, tea, soda"
+              required />
           </section>
         </fieldset>
-        <button type="submit">Get Category</button>
+
+        <button type="submit">Submit</button>
+
+        <output id="category" for="queryForm"></output>
       </form>
-      <output id="category" for="queryForm"></output>
+
+      <h1>There Are Emoji's For Everything</h1>
+
+      <div id="images" class="image-gallery">
+        <figure class="gallery-item">
+          <img
+            src="emojiCode.jpg"
+            alt="A reference visual displaying secret emoji strings" />
+          <figcaption id="cap1"></figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <img
+            src="emojiSentence.jpg"
+            alt="An example sentence structured entirely with descriptive emojis" />
+          <figcaption id="cap2"></figcaption>
+        </figure>
+      </div>
     </main>
+    <footer></footer>
   </body>
 </html>
