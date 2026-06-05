@@ -9,7 +9,6 @@ const cap3 = document.getElementById("cap3");
 // 2. Define the main execution handler
 async function handleSubmit(event) {
   event.preventDefault();
-
   const form = event.target;
   const outputTag = document.getElementById("category");
 
