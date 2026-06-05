@@ -12,6 +12,8 @@ async function handleSubmit(event) {
 
   const form = event.target;
   const outputTag = document.getElementById("category");
+
+  // Update the UI directly with a simple loading symbol
   outputTag.innerText = "⏳";
 
   // Use fetch() to request data from the API endpoint
@@ -24,41 +26,59 @@ async function handleSubmit(event) {
     // Read exactly what text the user typed into the input boxes right now
     const userSmileyText = form.elements["smileys-and-people"].value;
     const userFoodText = form.elements["food-and-drink"].value;
-    const textItemsList = categoriesArray.map(function (category) {
+
+    // Create a constant array to collect our final output items
+    const textItemsList = [];
+
+    // Loop through the categories instead of mapping them
+    for (const category of categoriesArray) {
       if (category.name === "smileys-and-people") {
         if (userSmileyText === "Smile" || userSmileyText === "smile") {
-          return "😀";
+          textItemsList.push("😀");
         } else if (userSmileyText !== "") {
-          return userSmileyText;
+          textItemsList.push(userSmileyText);
         } else {
-          return "😀";
+          textItemsList.push("😀");
         }
       }
 
       if (category.name === "food-and-drink") {
         if (userFoodText === "Apple" || userFoodText === "apple") {
-          return "🍏";
+          textItemsList.push("🍏");
         } else if (userFoodText !== "") {
-          return userFoodText;
+          textItemsList.push(userFoodText);
         } else {
-          return "🍏";
+          textItemsList.push("🍏");
         }
       }
-
-      return ""; // Fallback for unmatched categories
-    });
-
-    // Combine our collected items into a single final string variable
-    const finalOutputText = textItemsList.join("  ");
-
-    // Display the final symbols directly inside our HTML output tag
-    if (outputTag) {
-      outputTag.innerText = finalOutputText;
     }
+
+    // =====================================================================
+    // EXPANDED STRING BUILDING (Using fundamental array checks)
+    // =====================================================================
+    const totalItems = textItemsList.length;
+    let finalOutputText = "";
+
+    if (totalItems === 1) {
+      // If there's only one item, just use it directly
+      finalOutputText = textItemsList[0];
+    } else if (totalItems === 2) {
+      // If there are exactly two items, combine them manually with "and"
+      finalOutputText = textItemsList[0] + " and " + textItemsList[1];
+    } else if (totalItems > 2) {
+      // For three or more items, separate them with commas and add the final "and"
+      finalOutputText =
+        textItemsList[0] +
+        ", " +
+        textItemsList[1] +
+        ", and " +
+        textItemsList[2];
+    }
+
+    // Display that text string variable directly inside our HTML output tag
+    outputTag.innerText = finalOutputText;
   } else {
     // This block runs if response.ok is false
-    if (outputTag) {
-      outputTag.innerText = "❌";
-    }
+    outputTag.innerText = "❌";
   }
 }
