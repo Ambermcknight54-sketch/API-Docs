@@ -2,10 +2,6 @@
 const formTag = document.getElementById("queryForm");
 formTag.onsubmit = handleSubmit;
 
-const cap1 = document.getElementById("cap1");
-const cap2 = document.getElementById("cap2");
-const cap3 = document.getElementById("cap3");
-
 // 2. Define the main execution handler
 async function handleSubmit(event) {
   event.preventDefault();
@@ -26,11 +22,30 @@ async function handleSubmit(event) {
     const userSmileyText = form.elements["smileys-and-people"].value;
     const userFoodText = form.elements["food-and-drink"].value;
 
-    // Create a constant array to collect our final output items
-    const textItemsList = [];
+    let matchedName = "None Matched";
+    let isValid = "False";
+    let emojiIcon = "❓"; // Default emoji if nothing matches
+    // 4. Look through the list one by one using a standard loop
+    for (let i = 0; i < categoriesArray.length; i++) {
+      const currentCategory = categoriesArray[i];
+      const currentName = currentCategory.name.toLowerCase();
+      let emojiIcon = "❓"; // Default emoji if nothing matches
+      // Loop through the categories instead of mapping them
+      for (const category of categoriesArray) {
+        // If what the user typed matches an official category name, save it!
+        if (currentName === userSmileyText || currentName === userFoodText) {
+          matchedName = currentCategory.name;
+          isValid = "True";
 
-    // Loop through the categories instead of mapping them
-    for (const category of categoriesArray) {
+          // Give it a special emoji depending on which group it matches!
+          if (currentName === "smileys-and-people") {
+            emojiIcon = "😀";
+          } else if (currentName === "food-and-drink") {
+            emojiIcon = "🍔";
+          }
+        }
+      }
+
       if (category.name === "smileys-and-people") {
         if (userSmileyText === "Smile" || userSmileyText === "smile") {
           textItemsList.push("😀");
