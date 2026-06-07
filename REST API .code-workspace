@@ -1,8 +1,11 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": ".",
+    },
+    {
+      "path": "../../../../Downloads/codex-unit-2",
+    },
+  ],
+  "settings": {},
 }
