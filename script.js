@@ -1,15 +1,16 @@
 // 1. Target elements using only getElementById and assign the submit handler
 const formTag = document.getElementById("queryForm");
-formTag.onsubmit = handleSubmit;
 
 // 2. Define the main execution handler
 async function handleSubmit(event) {
   event.preventDefault();
   const form = event.target;
-  const outputTag = document.getElementById("category");
+  let outputTag = document.getElementById("category");
+  let catFaceTag = document.getElementById("category-faces");
+  let catBevTag = document.getElementById("category-beverages");
 
   // Update the UI directly with a simple loading symbol
-  outputTag.innerText = "⏳";
+  outputTag.innerText = "⏳ please wait";
 
   // Use fetch() to request data from the API
   const response = await fetch("https://emojihub.yurace.pro/api/categories");
@@ -25,48 +26,55 @@ async function handleSubmit(event) {
     let matchedName = "None Matched";
     let isValid = "False";
     let emojiIcon = "❓"; // Default emoji if nothing matches
+    let textItemsList = [];
+
     // 4. Look through the list one by one using a standard loop
     for (let i = 0; i < categoriesArray.length; i++) {
-      const currentCategory = categoriesArray[i];
-      const currentName = currentCategory.name.toLowerCase();
+      //"smileys and people",
+      //console.log(categoriesArray[i]);
+      let currentCategory = categoriesArray[i];
+      let currentName = currentCategory.toLowerCase();
       let emojiIcon = "❓"; // Default emoji if nothing matches
       // Loop through the categories instead of mapping them
-      for (const category of categoriesArray) {
-        // If what the user typed matches an official category name, save it!
-        if (currentName === userSmileyText || currentName === userFoodText) {
-          matchedName = currentCategory.name;
-          isValid = "True";
+      // If what the user typed matches an official category name, save it!
+      if (currentName === userSmileyText || currentName === userFoodText) {
+        matchedName = currentCategory;
+        isValid = "True";
 
-          // Give it a special emoji depending on which group it matches!
-          if (currentName === "smileys-and-people") {
-            emojiIcon = "😀";
-          } else if (currentName === "food-and-drink") {
-            emojiIcon = "🍔";
-          }
-        }
-      }
-
-      if (category.name === "smileys-and-people") {
-        if (userSmileyText === "Smile" || userSmileyText === "smile") {
-          textItemsList.push("😀");
-        } else if (userSmileyText !== "") {
-          textItemsList.push(userSmileyText);
+        // Give it a special emoji depending on which group it matches!
+        if (currentName === "smileys and people") {
+          emojiIcon = "😀";
+          catFaceTag.innerText = emojiIcon;
+          console.log("😀");
+        } else if (currentName === "food and drink") {
+          emojiIcon = "🍔";
+          console.log("🍔");
+          catBevTag.innerText = emojiIcon;
         } else {
-          textItemsList.push("😀");
+          catFaceTag.innerText = "❓";
+          catBevTag.innerText = "❓";
         }
       }
+      // if (category.name === "smileys-and-people") {
+      //   if (userSmileyText === "Smile" || userSmileyText === "smile") {
+      //     textItemsList.push("😀");
+      //   } else if (userSmileyText !== "") {
+      //     textItemsList.push(userSmileyText);
+      //   } else {
+      //     textItemsList.push("😀");
+      //   }
+      // }
 
-      if (category.name === "food-and-drink") {
-        if (userFoodText === "Apple" || userFoodText === "apple") {
-          textItemsList.push("🍏");
-        } else if (userFoodText !== "") {
-          textItemsList.push(userFoodText);
-        } else {
-          textItemsList.push("🍏");
-        }
-      }
+      // if (category.name === "food-and-drink") {
+      //   if (userFoodText === "Apple" || userFoodText === "apple") {
+      //     textItemsList.push("🍏");
+      //   } else if (userFoodText !== "") {
+      //     textItemsList.push(userFoodText);
+      //   } else {
+      //     textItemsList.push("🍏");
+      //   }
+      // }
     }
-
     const totalItems = textItemsList.length;
     let finalOutputText = "";
 
@@ -93,3 +101,5 @@ async function handleSubmit(event) {
     outputTag.innerText = "❌";
   }
 }
+
+formTag.addEventListener("submit", handleSubmit);
